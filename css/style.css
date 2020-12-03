@@ -6,3 +6,12 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+* {
+  /* negates default margins and paddings of some elements, like an h1 */
+  margin: 0;
+  padding: 0;
+
+  /* width and height specifications now include any paddings or borders */
+  box-sizing: border-box;
+}
