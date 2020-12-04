@@ -17,11 +17,30 @@ Dark green: #28b485
 }
 
 body {
+  /* font styling for child elements to inherit */
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 16px;
-
   /* 1.7x bigger than pre-defined line height */
   line-height: 1.7;
   color: #777;
+  /* applies padding around entire body */
+  padding: 30px;
+}
+
+.header {
+  /* sets to 95% of the viewport height */
+  height: 95vh;
+  /* gradient goes before img to layer on top */
+  background-image: 
+    linear-gradient(
+      to right bottom, 
+      rgba(126, 213, 111, 0.8), 
+      rgba(40, 180, 133, 0.8)), 
+    url(../img/hero.jpg);
+  /* fits bg image to width of element; stretches img if necessary */
+  background-size: cover;
+  /* keeps top-center of img aligned with top-center of viewport; top is never cropped*/
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
