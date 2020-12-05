@@ -61,6 +61,12 @@ body {
   height: 35px; 
 }
 
+/* just an example of applying animations elsewhere than h1 */
+/* not working correctly... */
+/* .logo-box:hover {
+  animation: moveInRight 1s ease-out; 
+} */
+
 .text-box {
   position: absolute;
   top: 40%;
@@ -72,7 +78,16 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+
+  /* 'hack' that supposedly eliminates minute 'shake' of animation towards its end */
+  /* note: this may be unecessary; no visible shake in my brower viewing */
+  backface-visibility: hidden;
 }
+
+/* just a test */
+/* .heading-primary:hover {
+  animation: moveInRight 1s ease-out; 
+} */
 
 .heading-primary-main {
   display: block;
@@ -85,8 +100,10 @@ body {
   animation-duration: 1s;
   animation-timing-function: ease-out;
 
+  /* number of animation play times */
   /* animation-iteration-count: 3; */
 
+  /* delay before triggering animation */
   /* animation-delay: 3s; */
 }
 
@@ -95,6 +112,11 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+
+  /* shorthand for all three animation- properties in .heading-primary-main */
+  /* @keyframes list, duration, timing function */
+  /* occurs at page load */
+  animation: moveInRight 1s ease-out;
 }
 /* need to name keyframes list */
 @keyframes moveInLeft {
@@ -106,6 +128,23 @@ body {
 
   80% {
     transform: translate(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* see comments for above */
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translate(100px)
+  }
+
+  80% {
+    transform: translate(-10px);
   }
 
   100% {
