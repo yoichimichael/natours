@@ -79,6 +79,10 @@ body {
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+
+  /* applies animation specified in @keyframes list of same name */
+  animation-name: moveInLeft;
+  animation-duration: 3s;
 }
 
 .heading-primary-sub {
@@ -86,4 +90,17 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+}
+/* need to name keyframes list */
+@keyframes moveInLeft {
+  /* can specify any percentage position of point in duration */
+  0% {
+    opacity: 0;
+    transform: translate(-100px)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
