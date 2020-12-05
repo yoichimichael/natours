@@ -82,7 +82,12 @@ body {
 
   /* applies animation specified in @keyframes list of same name */
   animation-name: moveInLeft;
-  animation-duration: 3s;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+
+  /* animation-iteration-count: 3; */
+
+  /* animation-delay: 3s; */
 }
 
 .heading-primary-sub {
@@ -97,6 +102,10 @@ body {
   0% {
     opacity: 0;
     transform: translate(-100px)
+  }
+
+  80% {
+    transform: translate(10px);
   }
 
   100% {
