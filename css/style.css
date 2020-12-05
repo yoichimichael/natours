@@ -42,5 +42,48 @@ body {
   background-size: cover;
   /* keeps top-center of img aligned with top-center of viewport; top is never cropped*/
   background-position: top;
+
+  /* need to set to relative so that 'position: absolute' in children will allow positioning relative to parent */
+  position: relative;
+
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+  /* when set to absolute and parent set to relative, positioning properties (top, left, etc.) refer to distance of sides of parent element. If parent is not set to relative, positioning properties will refer to body */
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  /* width will automatically scale proportionally */
+  height: 35px; 
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /* positions in relation to self; moves left 50% of div width from left side, moves up 40% of div height from top*/
+  transform: translate(-50%, -50%); 
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
 }
