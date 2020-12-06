@@ -153,7 +153,11 @@ body {
   }
 }
 
-/* pseudo-class; special state of .btn selector */
-.btn:link {
-
+/* pseudo-class; special state of .btn selector */ 
+/* below are both location pseudo classes */
+/* :link styles  */
+/* styling :link and :visited together make links look the same before and after clicks */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
 }
