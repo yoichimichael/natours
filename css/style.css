@@ -159,6 +159,19 @@ body {
   }
 }
 
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+
 /* pseudo-class; special state of .btn selector */ 
 /* below are both location pseudo classes */
 /* :link styles a link that hasn't been interacted with; :visited styles ones that have been clicked  */
@@ -179,6 +192,9 @@ body {
   /* individual properties can be specified */
   /* must be applied to initial state */
   transition: all .2s;
+
+  /* for positioning of .btn::after pseudo-element */
+  position: relative;
   
 }
 
@@ -197,4 +213,44 @@ body {
 .btn-white {
   background-color: #fff;
   color: #777;
+}
+
+/* pseudo-element */
+
+.btn::after {
+  /* pseudo-elements need content specified */
+  content: "";
+  display: inline-block;
+  /* because pseudo-elements are treated like children, below refers to .btn size */
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  /* initial state gets transition property */
+  transition: all .4s;
+}
+
+.btn-white::after {
+  background-color:#fff;
+}
+
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6); 
+  
+  /* sets to invisible */
+  opacity: 0;
+} 
+
+/* applied only to header button */
+.btn-animated {
+  /* @keyframes list reference */
+  animation: moveInBottom .5s ease-out .4s;
+
+  /* applies the styles at the 0% position of specified @keyframes list to element at start of animation; accomodates for delay of animation */
+  animation-fill-mode: backwards;
 }
