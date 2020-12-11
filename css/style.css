@@ -7,21 +7,24 @@ Dark green: #28b485
 
 */
 
-* {
+*,
+*::after,
+*::before {
   /* negates default margins and paddings of some elements, like an h1 */
   margin: 0;
   padding: 0;
 
-  /* width and height specifications now include any paddings or borders */
-  box-sizing: border-box;
+  /* all child elements will inherit this from body, where actual value is set */
+  box-sizing: inherit;
 }
 
 /* root setting */
 html {
 
-  /* technique: setting to 10px makes it easy to calculate px from rem */
+  /* browser default font-size is 16px; 62.5% of 16 is 10 */
+  /* technique: setting root font to 10px makes it easy to mentally convert px to/from rem */
 
-  font-size: 10px;
+  font-size: 62.5%; 
 }
 
 body {
@@ -34,6 +37,9 @@ body {
   color: #777;
   /* applies padding around entire body */
   padding: 3rem;
+
+  /* width and height specifications now include any paddings or borders */
+  box-sizing: border-box;
 }
 
 .header {
@@ -173,7 +179,7 @@ body {
     transform: translateY(3rem)
   }
 
-  100% {
+   100% {
     opacity: 1;
     transform: translate(0);
   }
@@ -203,7 +209,7 @@ body {
 
   /* for positioning of .btn::after pseudo-element */
   position: relative;
-  
+  font-size: 1.6rem;
 }
 
 /* psuedo-class for when mouse hovers over link */
@@ -232,7 +238,7 @@ body {
   /* because pseudo-elements are treated like children, below refers to .btn size */
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute; 
   top: 0;
   left: 0;
