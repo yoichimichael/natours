@@ -16,11 +16,19 @@ Dark green: #28b485
   box-sizing: border-box;
 }
 
+/* root setting */
+html {
+
+  /* technique: setting to 10px makes it easy to calculate px from rem */
+
+  font-size: 10px;
+}
+
 body {
   /* font styling for child elements to inherit */
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
   /* 1.7x bigger than pre-defined line height */
   line-height: 1.7;
   color: #777;
