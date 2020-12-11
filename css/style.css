@@ -33,7 +33,7 @@ body {
   line-height: 1.7;
   color: #777;
   /* applies padding around entire body */
-  padding: 30px;
+  padding: 3rem;
 }
 
 .header {
@@ -60,13 +60,13 @@ body {
 .logo-box {
   /* when set to absolute and parent set to relative, positioning properties (top, left, etc.) refer to distance of sides of parent element. If parent is not set to relative, positioning properties will refer to body */
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
   /* width will automatically scale proportionally */
-  height: 35px; 
+  height: 3.5rem; 
 }
 
 /* just an example of applying animations elsewhere than h1 */
@@ -94,7 +94,7 @@ body {
   /* note: this may be unecessary; no visible shake in my brower viewing */
   backface-visibility: hidden;
 
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 /* just a test */
@@ -104,9 +104,9 @@ body {
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
 
   /* applies animation specified in @keyframes list of same name */
   /* animation shorthand groups all 3 of the below together */
@@ -123,9 +123,9 @@ body {
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.75rem;
 
   /* shorthand for all three animation- properties in .heading-primary-main */
   /* @keyframes list, duration, timing function */
@@ -137,11 +137,11 @@ body {
   /* can specify any percentage position of point in duration */
   0% {
     opacity: 0;
-    transform: translate(-100px)
+    transform: translate(-10rem)
   }
 
   80% {
-    transform: translate(10px);
+    transform: translate(1rem);
   }
 
   100% {
@@ -154,11 +154,11 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translate(100px)
+    transform: translate(10rem)
   }
 
   80% {
-    transform: translate(-10px);
+    transform: translate(-1rem);
   }
 
   100% {
@@ -170,7 +170,7 @@ body {
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px)
+    transform: translateY(3rem)
   }
 
   100% {
@@ -189,13 +189,13 @@ body {
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
 
   /* using this property allows the box model to work on this element (as it does automatically for block elements, not inline elements */
   /* element no longer overlaps with above h1 */
   display: inline-block;
 
-  border-radius: 100px;
+  border-radius: 10rem;
 
   /* individual properties can be specified */
   /* must be applied to initial state */
@@ -208,14 +208,14 @@ body {
 
 /* psuedo-class for when mouse hovers over link */
 .btn:hover {
-  /* moves element up 3px */
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+  /* moves element up 3px (1rem == 10px) */
+  transform: translateY(-.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
 }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 7px rgba(0, 0, 0, .2);
+  box-shadow: 0 .5rem .7rem rgba(0, 0, 0, .2);
 }
 
 .btn-white {
