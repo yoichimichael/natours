@@ -1,11 +1,8 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+$color-grey-dark:#777;
+$color-white: #fff;
 
 
 /* the universal selector by itself does not include pseudo-elements */
@@ -36,7 +33,7 @@ body {
   /* font-size: 16px; */
   /* 1.7x bigger than pre-defined line height */
   line-height: 1.7;
-  color: #777;
+  color:$color-grey-dark;
   /* applies padding around entire body */
   padding: 3rem;
 
@@ -51,8 +48,9 @@ body {
   background-image: 
     linear-gradient(
       to right bottom, 
-      rgba(126, 213, 111, 0.8), 
-      rgba(40, 180, 133, 0.8)), 
+      /* note that below, putting a hex value in an rgba function, does not work in regular css */
+      rgba($color-primary-light, 0.8), 
+      rgba($color-primary-dark, 0.8)), 
     url(../img/hero.jpg);
   /* fits bg image to width of element; stretches img if necessary */
   background-size: cover;
@@ -95,7 +93,7 @@ body {
 }
 
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
 
   /* 'hack' that supposedly eliminates minute 'shake' of animation towards its end */
@@ -227,8 +225,8 @@ body {
 }
 
 .btn--white {
-  background-color: #fff;
-  color: #777;
+  background-color: $color-white;
+  color: $color-grey-dark;
 }
 
 /* pseudo-element */
@@ -251,7 +249,7 @@ body {
 }
 
 .btn--white::after {
-  background-color:#fff;
+  background-color:$color-white;
 }
 
 
