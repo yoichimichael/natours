@@ -1,0 +1,27 @@
+/* the universal selector by itself does not include pseudo-elements */
+*,
+*::after,
+*::before {
+  /* negates default margins and paddings of some elements, like an h1 */
+  margin: 0;
+  padding: 0;
+
+  /* all child elements will inherit this from body, where actual value is set */
+  box-sizing: inherit;
+}
+
+/* root setting */
+html {
+
+  /* browser default font-size is 16px; 62.5% of 16 is 10 */
+  /* technique: setting root font to 10px makes it easy to mentally convert px to/from rem */
+
+  // this is not in _typography because it's more of a global sizing setting for what 1rem is
+  font-size: 62.5%;
+}
+
+// note that there is a body selector in _typography, too
+body {
+  /* width and height specifications now include any paddings or borders */
+  box-sizing: border-box;
+}

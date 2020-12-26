@@ -1,0 +1,50 @@
+.header {
+  /* sets to 95% of the viewport height */
+  height: 95vh;
+  /* gradient goes before img to layer on top */
+  background-image: 
+    linear-gradient(
+      to right bottom, 
+      /* note that below, putting a hex value in an rgba function, does not work in regular css */
+      rgba($color-primary-light, 0.8), 
+      rgba($color-primary-dark, 0.8)), 
+    url(../img/hero.jpg);
+  /* fits bg image to width of element; stretches img if necessary */
+  background-size: cover;
+  /* keeps top-center of img aligned with top-center of viewport; top is never cropped*/
+  background-position: top;
+
+  /* need to set to relative so that 'position: absolute' in children will allow positioning relative to parent */
+  position: relative;
+
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  &__logo-box {
+    /* when set to absolute and parent set to relative, positioning properties (top, left, etc.) refer to distance of sides of parent element. If parent is not set to relative, positioning properties will refer to body */
+    position: absolute;
+    top: 4rem;
+    left: 4rem;  
+  }
+
+  &__logo {
+    /* width will automatically scale proportionally */
+    height: 3.5rem; 
+  }
+  
+  /* just an example of applying animations elsewhere than h1 */
+  /* not working correctly... */
+  /* .logo-box:hover {
+    animation: moveInRight 1s ease-out; 
+  } */
+  
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* positions in relation to self; moves left 50% of div width from left side, moves up 40% of div height from top*/
+    transform: translate(-50%, -50%); 
+  
+    /* centers .btn link */
+    text-align: center;
+  }
+}

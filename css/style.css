@@ -1,3 +1,4 @@
+/* scss knows that base refers to _base.scss */
 /* the universal selector by itself does not include pseudo-elements */
 *,
 *::after,

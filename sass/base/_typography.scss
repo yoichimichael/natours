@@ -1,19 +1,15 @@
-/* scss knows that base refers to _base.scss */
-
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/variables";
-
-@import "base/animations";
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
-
-@import "components/button";
-
-@import "layout/header";
-
-@import "pages/home";
+// note that there is a body selector in _base, too
+body {
+    /* font styling for child elements to inherit */
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    /* 1.7x bigger than pre-defined line height */
+    line-height: 1.7;
+    color:$color-grey-dark;
+    /* applies padding around entire body */
+    padding: 3rem;
+}
 
 .heading-primary {
   color: $color-white;
@@ -55,9 +51,9 @@
     /* occurs at page load */
     animation: moveInRight 1s ease-out;
   }
-}
 
-/* just a test */
-/* .heading-primary:hover {
-  animation: moveInRight 1s ease-out; 
-} */
+  /* just a test */
+  // &:hover {
+  //   animation: moveInRight 1s ease-out; 
+  // } 
+}

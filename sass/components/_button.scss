@@ -1,0 +1,84 @@
+.btn {
+  /* pseudo-class; special state of .btn selector */ 
+  /* below are both location pseudo classes */
+  /* :link styles a link that hasn't been interacted with; :visited styles ones that have been clicked  */
+  /* can use :any-link to style both :link and :visited */
+  /* styling :link and :visited together make links look the same before and after clicks */
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+
+    /* using this property allows the box model to work on this element (as it does automatically for block elements, not inline elements */
+    /* element no longer overlaps with above h1 */
+    display: inline-block;
+
+    border-radius: 10rem;
+
+    /* individual properties can be specified */
+    /* must be applied to initial state */
+    transition: all .2s;
+
+    /* for positioning of .btn::after pseudo-element */
+    position: relative;
+    font-size: 1.6rem;
+  }
+
+  /* psuedo-class for when mouse hovers over link */
+  &:hover {
+    /* moves element up 3px (1rem == 10px) */
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, .2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6); 
+      
+      /* sets to invisible */
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    /* again, note */
+    box-shadow: 0 .5rem .7rem rgba($color-black, .2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    
+    &::after {
+      background-color:$color-white;
+    }
+  }
+
+  /* pseudo-element */
+
+  &::after {
+    /* pseudo-elements need content specified */
+    content: "";
+    display: inline-block;
+    /* because pseudo-elements are treated like children, below refers to .btn size */
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    /* initial state gets transition property */
+    transition: all .4s;
+  } 
+
+  /* applied only to header button */
+  &--animated {
+    /* @keyframes list reference */
+    animation: moveInBottom .5s ease-out .4s;
+
+    /* applies the styles at the 0% position of specified @keyframes list to element at start of animation; accomodates for delay of animation */
+    animation-fill-mode: backwards;
+  }
+}
