@@ -1,8 +1,10 @@
 $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
+
 $color-grey-dark:#777;
 $color-white: #fff;
+$color-black: #000;
 
 
 /* the universal selector by itself does not include pseudo-elements */
@@ -61,35 +63,35 @@ body {
   position: relative;
 
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
 
-.header__logo-box {
-  /* when set to absolute and parent set to relative, positioning properties (top, left, etc.) refer to distance of sides of parent element. If parent is not set to relative, positioning properties will refer to body */
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
+  &__logo-box {
+    /* when set to absolute and parent set to relative, positioning properties (top, left, etc.) refer to distance of sides of parent element. If parent is not set to relative, positioning properties will refer to body */
+    position: absolute;
+    top: 4rem;
+    left: 4rem;  
+  }
 
-.header__logo {
-  /* width will automatically scale proportionally */
-  height: 3.5rem; 
-}
-
-/* just an example of applying animations elsewhere than h1 */
-/* not working correctly... */
-/* .logo-box:hover {
-  animation: moveInRight 1s ease-out; 
-} */
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  /* positions in relation to self; moves left 50% of div width from left side, moves up 40% of div height from top*/
-  transform: translate(-50%, -50%); 
-
-  /* centers .btn link */
-  text-align: center;
+  &__logo {
+    /* width will automatically scale proportionally */
+    height: 3.5rem; 
+  }
+  
+  /* just an example of applying animations elsewhere than h1 */
+  /* not working correctly... */
+  /* .logo-box:hover {
+    animation: moveInRight 1s ease-out; 
+  } */
+  
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* positions in relation to self; moves left 50% of div width from left side, moves up 40% of div height from top*/
+    transform: translate(-50%, -50%); 
+  
+    /* centers .btn link */
+    text-align: center;
+  }
 }
 
 .heading-primary {
@@ -101,6 +103,37 @@ body {
   backface-visibility: hidden;
 
   margin-bottom: 6rem;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+  
+    /* applies animation specified in @keyframes list of same name */
+    /* animation shorthand groups all 3 of the below together */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  
+    /* number of animation play times */
+    /* animation-iteration-count: 3; */
+  
+    /* delay before triggering animation */
+    /* animation-delay: 3s; */
+  }
+  
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+  
+    /* shorthand for all three animation- properties in .heading-primary-main */
+    /* @keyframes list, duration, timing function */
+    /* occurs at page load */
+    animation: moveInRight 1s ease-out;
+  }
 }
 
 /* just a test */
@@ -108,36 +141,7 @@ body {
   animation: moveInRight 1s ease-out; 
 } */
 
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
 
-  /* applies animation specified in @keyframes list of same name */
-  /* animation shorthand groups all 3 of the below together */
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-
-  /* number of animation play times */
-  /* animation-iteration-count: 3; */
-
-  /* delay before triggering animation */
-  /* animation-delay: 3s; */
-}
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-
-  /* shorthand for all three animation- properties in .heading-primary-main */
-  /* @keyframes list, duration, timing function */
-  /* occurs at page load */
-  animation: moveInRight 1s ease-out;
-}
 /* need to name keyframes list */
 @keyframes moveInLeft {
   /* can specify any percentage position of point in duration */
@@ -185,86 +189,87 @@ body {
   }
 }
 
+.btn {
+  /* pseudo-class; special state of .btn selector */ 
+  /* below are both location pseudo classes */
+  /* :link styles a link that hasn't been interacted with; :visited styles ones that have been clicked  */
+  /* can use :any-link to style both :link and :visited */
+  /* styling :link and :visited together make links look the same before and after clicks */
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
 
-/* pseudo-class; special state of .btn selector */ 
-/* below are both location pseudo classes */
-/* :link styles a link that hasn't been interacted with; :visited styles ones that have been clicked  */
-/* can use :any-link to style both :link and :visited */
-/* styling :link and :visited together make links look the same before and after clicks */
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
+    /* using this property allows the box model to work on this element (as it does automatically for block elements, not inline elements */
+    /* element no longer overlaps with above h1 */
+    display: inline-block;
 
-  /* using this property allows the box model to work on this element (as it does automatically for block elements, not inline elements */
-  /* element no longer overlaps with above h1 */
-  display: inline-block;
+    border-radius: 10rem;
 
-  border-radius: 10rem;
+    /* individual properties can be specified */
+    /* must be applied to initial state */
+    transition: all .2s;
 
-  /* individual properties can be specified */
-  /* must be applied to initial state */
-  transition: all .2s;
+    /* for positioning of .btn::after pseudo-element */
+    position: relative;
+    font-size: 1.6rem;
+  }
 
-  /* for positioning of .btn::after pseudo-element */
-  position: relative;
-  font-size: 1.6rem;
-}
+  /* psuedo-class for when mouse hovers over link */
+  &:hover {
+    /* moves element up 3px (1rem == 10px) */
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, .2);
 
-/* psuedo-class for when mouse hovers over link */
-.btn:hover {
-  /* moves element up 3px (1rem == 10px) */
-  transform: translateY(-.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
-}
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6); 
+      
+      /* sets to invisible */
+      opacity: 0;
+    }
+  }
 
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 .5rem .7rem rgba(0, 0, 0, .2);
-}
+  &:active {
+    transform: translateY(-1px);
+    /* again, note */
+    box-shadow: 0 .5rem .7rem rgba($color-black, .2);
+  }
 
-.btn--white {
-  background-color: $color-white;
-  color: $color-grey-dark;
-}
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    
+    &::after {
+      background-color:$color-white;
+    }
+  }
 
-/* pseudo-element */
+  /* pseudo-element */
 
-.btn::after {
-  /* pseudo-elements need content specified */
-  content: "";
-  display: inline-block;
-  /* because pseudo-elements are treated like children, below refers to .btn size */
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute; 
-  top: 0;
-  left: 0;
-  z-index: -1;
+  &::after {
+    /* pseudo-elements need content specified */
+    content: "";
+    display: inline-block;
+    /* because pseudo-elements are treated like children, below refers to .btn size */
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: -1;
 
-  /* initial state gets transition property */
-  transition: all .4s;
-}
+    /* initial state gets transition property */
+    transition: all .4s;
+  } 
 
-.btn--white::after {
-  background-color:$color-white;
-}
+  /* applied only to header button */
+  &--animated {
+    /* @keyframes list reference */
+    animation: moveInBottom .5s ease-out .4s;
 
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6); 
-  
-  /* sets to invisible */
-  opacity: 0;
-} 
-
-/* applied only to header button */
-.btn--animated {
-  /* @keyframes list reference */
-  animation: moveInBottom .5s ease-out .4s;
-
-  /* applies the styles at the 0% position of specified @keyframes list to element at start of animation; accomodates for delay of animation */
-  animation-fill-mode: backwards;
+    /* applies the styles at the 0% position of specified @keyframes list to element at start of animation; accomodates for delay of animation */
+    animation-fill-mode: backwards;
+  }
 }
