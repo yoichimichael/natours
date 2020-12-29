@@ -1,102 +1,4 @@
 /* scss knows that base refers to _base.scss */
-/* the universal selector by itself does not include pseudo-elements */
-*,
-*::after,
-*::before {
-  /* negates default margins and paddings of some elements, like an h1 */
-  margin: 0;
-  padding: 0;
-  /* all child elements will inherit this from body, where actual value is set */
-  box-sizing: inherit; }
-
-/* root setting */
-html {
-  /* browser default font-size is 16px; 62.5% of 16 is 10 */
-  /* technique: setting root font to 10px makes it easy to mentally convert px to/from rem */
-  font-size: 62.5%; }
-
-body {
-  /* font styling for child elements to inherit */
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  /* 1.7x bigger than pre-defined line height */
-  line-height: 1.7;
-  color: #777;
-  /* applies padding around entire body */
-  padding: 3rem;
-  /* width and height specifications now include any paddings or borders */
-  box-sizing: border-box; }
-
-.header {
-  /* sets to 95% of the viewport height */
-  height: 95vh;
-  /* gradient goes before img to layer on top */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  /* fits bg image to width of element; stretches img if necessary */
-  background-size: cover;
-  /* keeps top-center of img aligned with top-center of viewport; top is never cropped*/
-  background-position: top;
-  /* need to set to relative so that 'position: absolute' in children will allow positioning relative to parent */
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* just an example of applying animations elsewhere than h1 */
-  /* not working correctly... */
-  /* .logo-box:hover {
-    animation: moveInRight 1s ease-out; 
-  } */ }
-  .header__logo-box {
-    /* when set to absolute and parent set to relative, positioning properties (top, left, etc.) refer to distance of sides of parent element. If parent is not set to relative, positioning properties will refer to body */
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    /* width will automatically scale proportionally */
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    /* positions in relation to self; moves left 50% of div width from left side, moves up 40% of div height from top*/
-    transform: translate(-50%, -50%);
-    /* centers .btn link */
-    text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  /* 'hack' that supposedly eliminates minute 'shake' of animation towards its end */
-  /* note: this may be unecessary; no visible shake in my brower viewing */
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    /* applies animation specified in @keyframes list of same name */
-    /* animation shorthand groups all 3 of the below together */
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    /* number of animation play times */
-    /* animation-iteration-count: 3; */
-    /* delay before triggering animation */
-    /* animation-delay: 3s; */ }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    /* shorthand for all three animation- properties in .heading-primary-main */
-    /* @keyframes list, duration, timing function */
-    /* occurs at page load */
-    animation: moveInRight 1s ease-out; }
-
-/* just a test */
-/* .heading-primary:hover {
-  animation: moveInRight 1s ease-out; 
-} */
 /* need to name keyframes list */
 @keyframes moveInLeft {
   /* can specify any percentage position of point in duration */
@@ -127,6 +29,69 @@ body {
   100% {
     opacity: 1;
     transform: translate(0); } }
+
+/* the universal selector by itself does not include pseudo-elements */
+*,
+*::after,
+*::before {
+  /* negates default margins and paddings of some elements, like an h1 */
+  margin: 0;
+  padding: 0;
+  /* all child elements will inherit this from body, where actual value is set */
+  box-sizing: inherit; }
+
+/* root setting */
+html {
+  /* browser default font-size is 16px; 62.5% of 16 is 10 */
+  /* technique: setting root font to 10px makes it easy to mentally convert px to/from rem */
+  font-size: 62.5%; }
+
+body {
+  /* width and height specifications now include any paddings or borders */
+  box-sizing: border-box; }
+
+body {
+  /* font styling for child elements to inherit */
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  /* 1.7x bigger than pre-defined line height */
+  line-height: 1.7;
+  color: #777;
+  /* applies padding around entire body */
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /* 'hack' that supposedly eliminates minute 'shake' of animation towards its end */
+  /* note: this may be unecessary; no visible shake in my brower viewing */
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+  /* just a test */ }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /* applies animation specified in @keyframes list of same name */
+    /* animation shorthand groups all 3 of the below together */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* number of animation play times */
+    /* animation-iteration-count: 3; */
+    /* delay before triggering animation */
+    /* animation-delay: 3s; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    /* shorthand for all three animation- properties in .heading-primary-main */
+    /* @keyframes list, duration, timing function */
+    /* occurs at page load */
+    animation: moveInRight 1s ease-out; }
 
 .btn {
   /* pseudo-class; special state of .btn selector */
@@ -187,3 +152,37 @@ body {
     animation: moveInBottom .5s ease-out .4s;
     /* applies the styles at the 0% position of specified @keyframes list to element at start of animation; accomodates for delay of animation */
     animation-fill-mode: backwards; }
+
+.header {
+  /* sets to 95% of the viewport height */
+  height: 95vh;
+  /* gradient goes before img to layer on top */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  /* fits bg image to width of element; stretches img if necessary */
+  background-size: cover;
+  /* keeps top-center of img aligned with top-center of viewport; top is never cropped*/
+  background-position: top;
+  /* need to set to relative so that 'position: absolute' in children will allow positioning relative to parent */
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* just an example of applying animations elsewhere than h1 */
+  /* not working correctly... */
+  /* .logo-box:hover {
+    animation: moveInRight 1s ease-out; 
+  } */ }
+  .header__logo-box {
+    /* when set to absolute and parent set to relative, positioning properties (top, left, etc.) refer to distance of sides of parent element. If parent is not set to relative, positioning properties will refer to body */
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    /* width will automatically scale proportionally */
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* positions in relation to self; moves left 50% of div width from left side, moves up 40% of div height from top*/
+    transform: translate(-50%, -50%);
+    /* centers .btn link */
+    text-align: center; }
