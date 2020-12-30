@@ -1,0 +1,9 @@
+@mixin clearfix {
+  &::after {
+    // 'clearfix' method for clearing floats
+    // content needs to be specified for element to be part of DOM, but we don't want to see anything
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

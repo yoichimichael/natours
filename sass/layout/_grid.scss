@@ -1,7 +1,30 @@
 .row {
-  // 1140px - current (2017) screen width setting
-  max-width: 114rem;
+  // 1140px - current (2017) screen width setting convention
+  max-width: $grid-width;
   background-color: #eee;
-  // stan
+  // standard method for centering block elements inside other block elements
   margin: 0 auto;
+  
+
+  &:not(:last-child){
+    // these properties are applied to all class 'row' elements EXCEPT for :last-child
+    margin-bottom: $gutter-vertical;
+  }
+
+  // mixin for clearfix hack  
+  @include clearfix;
+
+  .col-1-of-2 {
+    // variable has to be interpolated within calc function
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+    background-color: orangered;
+    float: left;
+
+    &:not(:last-child) {
+      // only the right-most column does not get a gutter margin
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  
 }
