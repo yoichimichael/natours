@@ -10,6 +10,7 @@ Uses both types of CSS animation techniques:
 
 ##### **h1**
 - Uses `@keyframes` lists and `animation` properties with `opacity` and `translate` for slide/fade-in animation. Restricted use of this technique to `opacity` and `transform` properties for performance reasons.
+
 ##### **a (.btn)**
 - Uses pseudo-classes with `translateY`
 

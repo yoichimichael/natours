@@ -22,7 +22,7 @@
 
     /* for positioning of .btn::after pseudo-element */
     position: relative;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
   }
 
   /* psuedo-class for when mouse hovers over link */
@@ -80,5 +80,27 @@
 
     /* applies the styles at the 0% position of specified @keyframes list to element at start of animation; accomodates for delay of animation */
     animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+
+    // really small units that are unlikely to change can be fixed units
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+  }
+
+  &:hover {
+
+  }
+
+  &:active {
+
   }
 }
