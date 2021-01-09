@@ -224,3 +224,7 @@ body {
     transform: translate(-50%, -50%);
     /* centers .btn link */
     text-align: center; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0; }
