@@ -1,7 +1,7 @@
 .row {
   // 1140px - current (2017) screen width setting convention
   max-width: $grid-width;
-  background-color: #eee;
+  
   // standard method for centering block elements inside other block elements
   margin: 0 auto;
   
@@ -15,7 +15,7 @@
   @include clearfix;
 
   [class^="col-"] {
-    background-color: orangered;
+    
     float: left;
 
     &:not(:last-child) {
