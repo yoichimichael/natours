@@ -63,4 +63,21 @@ body {
   font-size: 3.5rem;
   text-transform: uppercase;
   font-size: 700;
+
+  // allows to see backgroud gradient
+  color: transparent;
+
+  // this sets the range of the gradient to be limited to within the width of the text instead of the width of the container
+  display: inline-block;
+
+  // sets gradient color range
+  background-image: linear-gradient(
+    to right, 
+    $color-primary-light, 
+    $color-primary-dark
+  );
+
+  // sets background-image to only cover space of text
+  background-clip: text;
+  -webkit-background-clip: text;
 }
