@@ -56,9 +56,10 @@ html {
   /* technique: setting root font to 10px makes it easy to mentally convert px to/from rem */
   font-size: 62.5%; }
 
-body {
+  /* this has been commented out becuase I think it already occurs in the _base.scss file */
+/* body { */
   /* width and height specifications now include any paddings or borders */
-  box-sizing: border-box; }
+  /* box-sizing: border-box; } */
 
 body {
   /* font styling for child elements to inherit */
@@ -162,6 +163,7 @@ body {
     animation: moveInBottom .5s ease-out .4s;
     /* applies the styles at the 0% position of specified @keyframes list to element at start of animation; accomodates for delay of animation */
     animation-fill-mode: backwards; }
+
 
 .row {
   max-width: 114rem;
