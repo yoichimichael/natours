@@ -80,4 +80,13 @@ body {
   // sets background-image to only cover space of text
   background-clip: text;
   -webkit-background-clip: text;
+  letter-spacing: .2rem;
+
+  // for skew effect
+  transition: all .2s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+  }
 }
