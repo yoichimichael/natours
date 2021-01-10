@@ -47,8 +47,9 @@
   }
 
   // makes other images that are not hovered over shrink
+  // selects all the children of .composition on hover EXCEPT for the one that is specifically being hovered over
   &:hover &__photo:not(:hover){
     transform: scale(.95);
   }
-
+  
 }
