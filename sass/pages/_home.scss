@@ -14,4 +14,14 @@
       rgba($color-primary-dark, 0.8)), 
     url(../img/nat-4.jpg);
   background-size: cover;
+
+  transform: skewY(-7deg);
+
+  margin-top: -10rem;
+
+  // selects all direct children of section-features
+  // i.e. all the feature-boxes
+  & > * {
+    transform: skewY(7deg);
+  }
 }
