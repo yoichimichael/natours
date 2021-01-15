@@ -19,15 +19,25 @@
     // hides the back of an element when flipped
     backface-visibility: hidden;
 
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-dark, .15);
+
     &--front{
       background-color: $color-white;
     }
 
     &--back{
-      background-color: green;
       // back starts already flipped
       // negative value to make rotation direction opposite when it flips back to its own 'front'
       transform: rotateY(-180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+           to right bottom, 
+           $color-secondary-light,
+           $color-secondary-dark
+        );
+      }
     }
   }
   
