@@ -1,4 +1,6 @@
 .card {
+
+  // FUNCTIONALITY
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
@@ -20,6 +22,8 @@
     backface-visibility: hidden;
 
     border-radius: 3px;
+    overflow: hidden; // ensures the above border-radius setting covers the contained image as well
+
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
     &--front{
@@ -49,4 +53,30 @@
     // because starts flipped, this flips it over
     transform: rotateY(0);
   }
+  // FRONT SIDE STYLING
+  &__picture { 
+    background-size: cover; 
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    
+
+    &--1 {
+      background-image: 
+        linear-gradient(
+          to right bottom, 
+          $color-secondary-light,
+          $color-secondary-dark
+        ), 
+        url(../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: url(../img/nat-5.jpg);
+    }
+    &--3 {
+      background-image: url(../img/nat-5.jpg);
+    }
+  }
 }
+

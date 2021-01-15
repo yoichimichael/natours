@@ -17,6 +17,7 @@
   /* need to set to relative so that 'position: absolute' in children will allow positioning relative to parent */
   position: relative;
 
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
   &__logo-box {
