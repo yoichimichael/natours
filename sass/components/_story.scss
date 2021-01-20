@@ -5,12 +5,25 @@
   background-color: $color-white;
   border-radius: 3px;
   padding: 6rem;
+  padding-left: 9rem;
   font-size: $default-font-size;
 
   &__shape {
     width: 15rem;
     height: 15rem;
-    background-color: orangered ;
+    background-color: orangered;
+    // needs to be floated for shape-outside to function
     float: left;
+
+    // wraps text around a circular shape
+    // element has to be floated and has to have defined dimenions
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+
+    // makes the div a circle
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+
+    transform: translateX(-3rem);
   }
 }
