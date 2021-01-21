@@ -34,6 +34,7 @@
   &__img {
     // will be 100% of the parent story__shape div
     height: 100%;
+    transform: translateX(-4rem);
   }
 
   &__text {
@@ -44,11 +45,25 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 20%);
     color: $color-white;
     text-transform: uppercase;
     font-size: 1.7rem;
     text-align: center;
+    opacity: 0;
+    transition: all .5s;
 
+    // might not be necessary anymore
+    // takes care of 'shake' glitch at end of transition
+    backface-visibility: hidden;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    
   }
 }
