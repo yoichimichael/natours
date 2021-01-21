@@ -34,7 +34,12 @@
   &__img {
     // will be 100% of the parent story__shape div
     height: 100%;
-    transform: translateX(-4rem);
+    transform: translateX(-4rem) scale(1.4);
+
+    // like in __caption, this seems no longer necessary
+    // the problem in the lesson video doesn't occur in my browser
+    backface-visibility: hidden;
+    transition: all .5s;
   }
 
   &__text {
@@ -64,6 +69,8 @@
   }
 
   &:hover &__img {
+    transform: translateX(-4rem) scale(1);
     
+    filter: blur(3px) brightness(80%);
   }
 }
