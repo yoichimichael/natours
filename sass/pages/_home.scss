@@ -48,7 +48,14 @@
 }
 
 .book {
-  background-image: url(../../img/nat-10.jpg);
+  background-image: 
+    linear-gradient(
+      105deg, 
+      rgba($color-white, .9) 0%,
+      rgba($color-white, .9) 50%, 
+      transparent 50%
+    ), 
+    url(../../img/nat-10.jpg);
   
   background-size: 100%; // 'cover' would have the same result
   border-radius: $border-radius-small;
