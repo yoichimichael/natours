@@ -399,6 +399,13 @@ body {
     background-clip: text;
     -webkit-background-clip: text; }
 
+.form__input {
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none; }
+
 .story {
   width: 75%;
   margin: 0 auto;
