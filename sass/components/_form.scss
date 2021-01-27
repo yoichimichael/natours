@@ -35,6 +35,8 @@
     &::-webkit-input-placeholder {
       color: $color-grey-dark-2;
     }
+
+
   }
 
   // for the animated label
@@ -44,5 +46,14 @@
     font-weight: 700;
     margin-left: 2rem;
     margin-top: .7rem;
+    transition: all .3s;
+  }
+
+  &__input:placeholder-shown + &__label{
+    // this hides the element, but it remains on the page
+    opacity: 0;
+    // this actually takes the element off the page
+    visibility: hidden;
+    transform: translateY(-4rem);
   }
 }
