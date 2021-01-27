@@ -6,20 +6,30 @@
 
   &__input {
     font-size: 1.5rem;
-    // for some reason the input placeholder texts don't automatically inherit the established font, so have to specify
+    
+    // input placeholder texts don't automatically inherit the established font styles, so have to specify
     font-family: inherit;
+    color: inherit;
+
     padding: 1.5rem 2rem;
     border-radius: 2px;
     background-color: rgba($color-white, .5);
     border: none;
-  }
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
 
-  // removes default blue border and adds custom focus styling
-  &__input:focus {
-    outline: none;
-    box-shadow: 0 1rem 2rem rgba($color-black, .1);
-                  // width, style, color
-    border-bottom: 3px solid $color-primary;
+      // removes default blue border and adds custom focus styling
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, .1);
+                    // width, style, color
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
   }
 
   &__label {
