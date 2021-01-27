@@ -27,12 +27,22 @@
       border-bottom: 3px solid $color-primary;
     }
 
+    // styles for invalid focused elements
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
     &::-webkit-input-placeholder {
       color: $color-grey-dark-2;
     }
   }
 
+  // for the animated label
   &__label {
-
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
   }
 }
