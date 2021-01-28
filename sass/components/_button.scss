@@ -46,7 +46,7 @@
 
   &:active,
   &:focus {
-    outline: none;
+    outline: none; // this and 'focus' selector are specifically for the <form>'s <button> element but might not be necessary; my project's button did not have a blue outline by default
     transform: translateY(-1px);
     /* again, note */
     box-shadow: 0 .5rem .7rem rgba($color-black, .2);
