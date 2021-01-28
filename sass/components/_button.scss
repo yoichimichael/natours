@@ -4,6 +4,7 @@
   /* :link styles a link that hasn't been interacted with; :visited styles ones that have been clicked  */
   /* can use :any-link to style both :link and :visited */
   /* styling :link and :visited together make links look the same before and after clicks */
+  &, // this adds the <form>'s <button> element
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -23,6 +24,10 @@
     /* for positioning of .btn::after pseudo-element */
     position: relative;
     font-size: $default-font-size;
+
+    // change for the <form>'s <button> element
+    border: none;
+    cursor: pointer;
   }
 
   /* psuedo-class for when mouse hovers over link */
@@ -39,7 +44,9 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-1px);
     /* again, note */
     box-shadow: 0 .5rem .7rem rgba($color-black, .2);
