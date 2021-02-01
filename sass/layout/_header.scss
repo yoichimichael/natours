@@ -39,11 +39,11 @@
   } */
   
   &__text-box {
-    position: absolute;
+    @include center;
+    
+    // overwrites property in @mixin center
     top: 40%;
-    left: 50%;
-    /* positions in relation to self; moves left 50% of div width from left side, moves up 40% of div height from top*/
-    transform: translate(-50%, -50%); 
+
   
     /* centers .btn link */
     text-align: center;

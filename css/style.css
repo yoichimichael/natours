@@ -616,10 +616,11 @@ body {
     height: 3.5rem; }
   .header__text-box {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
-    /* positions in relation to self; moves left 50% of div width from left side, moves up 40% of div height from top*/
+    /* positions in relation to self; moves left 50% of div width from left side, moves up 50% of div height from top*/
     transform: translate(-50%, -50%);
+    top: 40%;
     /* centers .btn link */
     text-align: center; }
 
@@ -658,7 +659,10 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  /* positions in relation to self; moves left 50% of div width from left side, moves up 50% of div height from top*/
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center; }
 
 .section-about {
   background-color: #f7f7f7;

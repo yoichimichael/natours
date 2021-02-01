@@ -12,5 +12,6 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  /* positions in relation to self; moves left 50% of div width from left side, moves up 50% of div height from top*/
   transform: translate(-50%, -50% );
 }
