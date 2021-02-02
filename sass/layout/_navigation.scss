@@ -12,6 +12,7 @@
     top: 6rem;
     right: 6rem;
     z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba($color-black, .1);
   }
 
   &__background {
@@ -24,24 +25,34 @@
     background-image: radial-gradient($color-primary-light, $color-primary-dark);
     // only works on elements with a defined position 
     z-index: 1000;
+    transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
 
-    transform: scale(86);
+    // transform: scale(86);
   }
 
   &__nav {
     height: 100vh;
-    // unecessary as a block level element already occupies 100% of its width
-    width: 100%;
+    
     position: fixed;
     top: 0;
     right: 0;
     z-index: 1500;
+
+    // hides menu items
+    opacity: 0;
+    width: 0;
+
+    // only apply to opacity because we want to width transformation to be instantaneous
+    transition: all .8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   }
 
   &__list {
     @include center;
     list-style: none;
     text-align: center;
+
+    // this prevents the list items 
+    width: 100%;
   }
 
   &__item {
@@ -76,4 +87,14 @@
     }
 
   }
+  // the tilda (~) is the general sibling selector
+  &__checkbox:checked ~ &__background {
+    transform: scale(86);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;    
+  }
+
 }
