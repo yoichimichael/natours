@@ -495,13 +495,15 @@ body {
     width: 75%;
     background-color: #fff;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
-    border-radius: 3px; }
+    border-radius: 3px;
+    display: table; }
   .popup__left {
     width: 33.333333%;
-    float: left; }
+    display: table-cell; }
   .popup__right {
     width: 66.6666667%;
-    float: left; }
+    display: table-cell;
+    vertical-align: middle; }
   .popup__img {
     display: block;
     width: 100%; }
