@@ -484,7 +484,18 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8); }
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999; }
+  .popup__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* positions in relation to self; moves left 50% of div width from left side, moves up 50% of div height from top*/
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 50rem;
+    background-color: #fff;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2); }
 
 .story {
   width: 75%;
