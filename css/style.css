@@ -493,9 +493,18 @@ body {
     /* positions in relation to self; moves left 50% of div width from left side, moves up 50% of div height from top*/
     transform: translate(-50%, -50%);
     width: 75%;
-    height: 50rem;
     background-color: #fff;
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    border-radius: 3px; }
+  .popup__left {
+    width: 33.333333%;
+    float: left; }
+  .popup__right {
+    width: 66.6666667%;
+    float: left; }
+  .popup__img {
+    display: block;
+    width: 100%; }
 
 .story {
   width: 75%;
