@@ -10,8 +10,6 @@
 1200 - 1800px: desktop (normal styles for desktop-first approach)
 1800px + : big desktop
 
-*/
-/*
 $breakpoint argument choices:
 - phone
 - tab-port
@@ -19,6 +17,7 @@ $breakpoint argument choices:
 - big-desktop
 
 1em = 16px (browser default)
+
 */
 /*
 ---------
@@ -86,18 +85,15 @@ html {
   /* browser default font-size is 16px; 62.5% of 16 is 10 */
   /* technique: setting root font to 10px makes it easy to mentally convert px to/from rem */
   font-size: 62.5%; }
-  @media (max-width: 37.5em) {
-    html {
-      font-size: 50%; } }
   @media (max-width: 56.25em) {
     html {
-      font-size: 60%; } }
+      font-size: 50%; } }
   @media (max-width: 75em) {
     html {
-      font-size: 70%; } }
+      font-size: 56.25%; } }
   @media (min-width: 112.5em) {
     html {
-      font-size: 80%; } }
+      font-size: 75%; } }
 
 body {
   /* width and height specifications now include any paddings or borders */

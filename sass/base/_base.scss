@@ -24,20 +24,22 @@ html {
   //   font-size: 50%;
   // }
 
-  @include respond(phone) {
-    font-size: 50%;
-  }
+  // this is unecessary because the tab-port breakpoint also applies to the smaller phone size
+  // @include respond(phone) {
+  //   font-size: 50%;
+  // }
   
   @include respond(tab-port) {
-    font-size: 60%;
+    font-size: 50%; // 1rem = 8px, 8/16 = 50%;
   }
 
   @include respond(tab-land) {
-    font-size: 70%;
+    // these percentages are relative to 16px
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%; 
   }
 
   @include respond(big-desktop) {
-    font-size: 80%;
+    font-size: 75%; // 1rem = 12, 12/16 = 75%;
   }
 }
 

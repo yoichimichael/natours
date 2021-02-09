@@ -35,13 +35,6 @@
 1200 - 1800px: desktop (normal styles for desktop-first approach)
 1800px + : big desktop
 
-*/
-
-@mixin respond-phone {
-  @media (max-width: 600px) { @content };
-}
-
-/*
 $breakpoint argument choices:
 - phone
 - tab-port
@@ -49,9 +42,13 @@ $breakpoint argument choices:
 - big-desktop
 
 1em = 16px (browser default)
+
 */
 
-
+// example of simpler importing of content
+// @mixin respond-phone {
+//   @media (max-width: 600px) { @content };
+// }
 
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
