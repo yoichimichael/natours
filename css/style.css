@@ -85,12 +85,12 @@ html {
   /* browser default font-size is 16px; 62.5% of 16 is 10 */
   /* technique: setting root font to 10px makes it easy to mentally convert px to/from rem */
   font-size: 62.5%; }
-  @media (max-width: 56.25em) {
-    html {
-      font-size: 50%; } }
   @media (max-width: 75em) {
     html {
       font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
   @media (min-width: 112.5em) {
     html {
       font-size: 75%; } }

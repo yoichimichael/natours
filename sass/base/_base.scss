@@ -24,20 +24,23 @@ html {
   //   font-size: 50%;
   // }
 
+  // note the order of the following mixins
+
+  @include respond(tab-land) { // width < 1200px?
+    // these percentages are relative to 16px
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%; 
+  }
+  
+  @include respond(tab-port) { // width < 900px?
+    font-size: 50%; // 1rem = 8px, 8/16 = 50%;
+  }
+
   // this is unecessary because the tab-port breakpoint also applies to the smaller phone size
   // @include respond(phone) {
   //   font-size: 50%;
   // }
-  
-  @include respond(tab-port) {
-    font-size: 50%; // 1rem = 8px, 8/16 = 50%;
-  }
 
-  @include respond(tab-land) {
-    // these percentages are relative to 16px
-    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%; 
-  }
-
+  // this is a min-width property, so anything below this screen size won't have this font-size applied anyway, and therefore so can go last in this group
   @include respond(big-desktop) {
     font-size: 75%; // 1rem = 12, 12/16 = 75%;
   }
