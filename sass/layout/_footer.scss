@@ -4,6 +4,10 @@
   font-size: 1.4rem;
   color: $color-primary-light-1;
 
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
   &__logo-box {
     text-align: center;
     margin-bottom: 8rem; 
@@ -21,6 +25,11 @@
 
     // this makes the border-top only cover the list items
     display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    } 
   }
 
   &__list {
@@ -59,5 +68,10 @@
     padding-top: 2rem;
     width: 80%;
     float: right;
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    } 
   }
 }
