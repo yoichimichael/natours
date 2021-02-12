@@ -26,11 +26,12 @@ html {
 
   // note the order of the following mixins
 
+
   @include respond(tab-land) { // width < 1200px?
     // these percentages are relative to 16px
     font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%; 
   }
-  
+
   @include respond(tab-port) { // width < 900px?
     font-size: 50%; // 1rem = 8px, 8/16 = 50%;
   }
@@ -50,4 +51,10 @@ html {
 body {
   /* width and height specifications now include any paddings or borders */
   box-sizing: border-box;
+  /* applies padding around entire body */
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }

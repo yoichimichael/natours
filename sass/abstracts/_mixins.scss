@@ -41,16 +41,22 @@ $breakpoint argument choices:
 - tab-land
 - big-desktop
 
+Order: Base + typography > general layout + grid > page layout > components
+
 1em = 16px (browser default)
 
 */
 
-// example of simpler importing of content
+// example of import without func argument
 // @mixin respond-phone {
 //   @media (max-width: 600px) { @content };
 // }
 
 @mixin respond($breakpoint) {
+  // @if $breakpoint == tiny { // for testing, delete later
+  //   // 500px / 16px = 31.25em
+  //   @media (max-width: 31.25em) { @content }; // 500px
+  // }
   @if $breakpoint == phone {
     // 600px / 16px = 37.5em
     @media (max-width: 37.5em) { @content }; // 600px
@@ -64,4 +70,7 @@ $breakpoint argument choices:
   @if $breakpoint == big-desktop {
     @media (min-width: 112.5em) { @content }; // 1800px
   }
+  // @if $breakpoint == huge-desktop {
+  //   @media (min-width: 120em) { @content };
+  // }
 }
