@@ -5,6 +5,9 @@
   // standard method for centering block elements inside other block elements
   margin: 0 auto;
   
+  @include respond(tab-port){
+    max-width: 50rem;
+  }
 
   &:not(:last-child){
     // these properties are applied to all class 'row' elements EXCEPT for :last-child
@@ -28,6 +31,7 @@
 
       @include respond(tab-port){
         margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
       }
     }
 

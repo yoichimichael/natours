@@ -681,6 +681,9 @@ body {
 .row {
   max-width: 114rem;
   margin: 0 auto; }
+  @media (max-width: 56.25em) {
+    .row {
+      max-width: 50rem; } }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
     @media (max-width: 56.25em) {
@@ -696,7 +699,8 @@ body {
       margin-right: 6rem; }
       @media (max-width: 56.25em) {
         .row [class^="col-"]:not(:last-child) {
-          margin-right: 0; } }
+          margin-right: 0;
+          margin-bottom: 6rem; } }
     @media (max-width: 56.25em) {
       .row [class^="col-"] {
         width: 100% !important; } }
@@ -731,6 +735,10 @@ body {
   /* .logo-box:hover {
     animation: moveInRight 1s ease-out; 
   } */ }
+  @media (max-width: 37.5em) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%); } }
   .header__logo-box {
     /* when set to absolute and parent set to relative, positioning properties (top, left, etc.) refer to distance of sides of parent element. If parent is not set to relative, positioning properties will refer to body */
     position: absolute;
