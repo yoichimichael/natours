@@ -9,6 +9,10 @@
   &:not(:last-child){
     // these properties are applied to all class 'row' elements EXCEPT for :last-child
     margin-bottom: $gutter-vertical;
+
+    @include respond(tab-port){
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
   // referencing a mixin for clearfix hack  
@@ -21,6 +25,14 @@
     &:not(:last-child) {
       // only the right-most column does not get a gutter margin
       margin-right: $gutter-horizontal;
+
+      @include respond(tab-port){
+        margin-right: 0;
+      }
+    }
+
+    @include respond(tab-port){
+      width: 100% !important;
     }
   }
 
