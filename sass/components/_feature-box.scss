@@ -7,6 +7,10 @@
   box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
   transition: transform .2s;
 
+  @include respond(tab-port){
+    padding: 2rem;
+  }
+
   &:hover {
     transform: translateY(-1.5rem) scale(1.03);
   }
@@ -28,9 +32,13 @@
     // this can be used on our icons because they are treated like fonts
     background-clip: text;
     -webkit-background-clip: text;  
+
+    @include respond(tab-port){
+      margin-bottom: 0;
+    }
   }
 
-  &__text {
+  // &__text {
 
-  }
+  // }
 }
