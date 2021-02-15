@@ -70,7 +70,7 @@ Order: Base + typography > general layout + grid > page layout > components
   @if $breakpoint == big-desktop {
     @media (min-width: 112.5em) { @content }; // 1800px
   }
-  // @if $breakpoint == huge-desktop {
-  //   @media (min-width: 120em) { @content };
-  // }
+  @if $breakpoint == huge-desktop {
+    @media (min-width: 120em) { @content };
+  }
 }

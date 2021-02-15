@@ -45,6 +45,9 @@ html {
   @include respond(big-desktop) {
     font-size: 75%; // 1rem = 12, 12/16 = 75%;
   }
+  @include respond(huge-desktop) {
+    font-size: 100%; // 1rem = 12, 12/16 = 75%;
+  }
 }
 
 // note that there is a body selector in _typography, too
