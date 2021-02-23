@@ -835,7 +835,7 @@ body {
   /* .logo-box:hover {
     animation: moveInRight 1s ease-out; 
   } */ }
-  @media (min-resolution: 192dpi) and (min-width: 600px) {
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
     .header {
       background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
