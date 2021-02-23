@@ -8,7 +8,8 @@
       /* note that below, putting a hex value in an rgba function, does not work in regular css */
       rgba($color-primary-light, 0.8), 
       rgba($color-primary-dark, 0.8)), 
-    url(../img/hero.jpg);
+    url(../img/hero-small.jpg)
+  ;
   /* fits bg image to width of element; stretches img if necessary */
   background-size: cover;
   /* keeps top-center of img aligned with top-center of viewport; top is never cropped*/
@@ -19,6 +20,17 @@
 
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  @media (min-resolution: 192dpi) and (min-width: 600px) {
+    background-image: 
+      linear-gradient(
+        to right bottom, 
+        rgba($color-secondary-light, 0.8), 
+        rgba($color-secondary-dark, 0.8)
+      ), 
+      url(../img/hero.jpg)
+    ;
+  }
 
   @include respond(phone) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
