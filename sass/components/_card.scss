@@ -17,6 +17,8 @@
     left: 0;
     width: 100%;
     // hides the back of an element when flipped
+    // webkit for safari support, but probably no longer need
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 
     border-radius: 3px;
