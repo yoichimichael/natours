@@ -26,19 +26,24 @@
     // needs to be floated for shape-outside to function
     float: left;
 
-    // wraps text around a circular shape
-    // element has to be floated and has to have defined dimenions
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
-
-    // makes the div a circle
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
-
     transform: translateX(-3rem) skewX(12deg);
 
     // lets __caption be positioned relative to this 
     position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      // makes the div a circle
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+
+      // wraps text around a circular shape
+      // element has to be floated and has to have defined dimenions
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+      border-radius: none;
+    }
 
     @include respond(phone){
       transform: translateX(-3rem) skewX(0);
